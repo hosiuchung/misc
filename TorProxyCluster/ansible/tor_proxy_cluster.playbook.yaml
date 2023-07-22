@@ -1,0 +1,32 @@
+- name: Tor cluster playbook
+  hosts: torvm
+  vars:
+    docker_users:
+      - "{{ ansible_user_id }}"
+  pre_tasks:
+    - name: APT update
+      become: true
+      ansible.builtin.apt:
+        update_cache: yes
+  roles:
+    - role: geerlingguy.pip
+      become: true
+    - role: geerlingguy.docker
+      become: true
+  tasks:
+    - name: Install docker sdk for python
+      ansible.builtin.pip:
+        name:
+          - docker
+          - docker-compose
+        state: present
+    # Currently ansible docker compose module does not support ssh
+    # Use docker-compose cli alternatively
+    # - name: Docker compose up
+    #   community.docker.docker_compose:
+    #     build: true
+    #     project_src: ..
+    #     docker_host: "ssh://{{ ansible_user_id }}@{{ ansible_eth0.ipv4.address }}:22"
+    #     state: present
+    #   delegate_to: localhost
+    #   debugger: always

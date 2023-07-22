@@ -1,0 +1,6 @@
+{
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-inventory.json": "file:///c%3A/Users/chungho/repo/tor-proxy-cluster/ansible/host.sit.yaml",
+    "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible.json#/$defs/playbook": "file:///c%3A/Users/chungho/repo/tor-proxy-cluster/ansible/tor_proxy_cluster.playbook.yaml"
+  }
+}

@@ -1,5 +1,7 @@
 # Contents
 
--   [ConvertInternetShortcutsToJson (PowerShell)](ConvertInternetShortcutsToJson/README.md)
+- [Convert Internet Shortcuts To Json](ConvertInternetShortcutsToJson/README.md)
 
--   [ExtractUrlsFromSkypeHistory (Node.js)](ExtractUrlsFromSkypeHistory/README.md)
+- [Extract Urls From Skype History](ExtractUrlsFromSkypeHistory/README.md)
+
+- [Tor Proxy Cluster](TorProxyCluster/README.md)

@@ -1,0 +1,44 @@
+version: "2.4"
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx.dockerfile
+    restart: always
+    networks:
+      - tor-network
+    ports:
+      - "8118:8118"
+      - "8119:8119"
+      - "8080:80"
+    links:
+      - tor0
+      - tor1
+      - tor2
+      - tor3
+      - tor4
+      - tor5
+      - tor6
+      - tor7
+      - tor8
+      - tor9
+  tor0: &tor
+    image: dperson/torproxy
+    # command: ["-l", "HK"]
+    restart: always
+    networks:
+      - tor-network
+    expose:
+      - "8118"
+  tor1: *tor
+  tor2: *tor
+  tor3: *tor
+  tor4: *tor
+  tor5: *tor
+  tor6: *tor
+  tor7: *tor
+  tor8: *tor
+  tor9: *tor
+
+networks:
+  tor-network:
